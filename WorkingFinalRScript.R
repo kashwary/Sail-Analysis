@@ -3,35 +3,6 @@ library(tidyverse)
 library(DBI)
 library(ggplot2)
 
-pwd <- c("3jgmpLq7kdpZTwah")
-
-#connecting all the three databases
-#gettting data for s21
-con <- dbConnect(odbc::odbc(), .connection_string = "Driver={MySQL ODBC 8.0 Unicode Driver};", 
-                 Server = "sail-data-warehouse.mysql.database.azure.com",
-                 Database = "s21_15619_anon_dw",
-                 UID = "kashwary@sail-data-warehouse",
-                 PWD = pwd,
-                 Port = 3306)
-
-#getting data for s20
-
-con1 <- dbConnect(odbc::odbc(), .connection_string = "Driver={MySQL ODBC 8.0 Unicode Driver};", 
-                  Server = "sail-data-warehouse.mysql.database.azure.com",
-                  Database = "s20_15619_anon_dw",
-                  UID = "kashwary@sail-data-warehouse",
-                  PWD = pwd,
-                  Port = 3306)
-
-#getting data for f20
-con2 <- dbConnect(odbc::odbc(), .connection_string = "Driver={MySQL ODBC 8.0 Unicode Driver};", 
-                  Server = "sail-data-warehouse.mysql.database.azure.com",
-                  Database = "f20_15619_anon_dw",
-                  UID = "kashwary@sail-data-warehouse",
-                  PWD = pwd,
-                  Port = 3306)
-
-
 
 #getting data into dataframes
 #getting s21 data in a dataframe
